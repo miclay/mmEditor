@@ -1,0 +1,40 @@
+{
+  "name": "mmEditor",
+  "description": "美人鱼编辑器，基于mermaid，可以在线绘制流程图、时序图、甘特图",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miclay/mmEditor.git"
+  },
+  "author": "木中",
+  "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-antd": "^0.5.1",
+    "babel-preset-es2015": "^6.13.2",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.22.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "shelljs": "^0.7.6",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "yargs": "^5.0.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.13.0",
+    "mermaid": "^7.0.3"
+  },
+  "scripts": {
+    "_server": "webpack-dev-server  --inline --hot",
+    "clean": "rm -rf ./build",
+    "build": "npm run clean && webpack --progress --hide-modules --watch --config lib/conf.prod.js",
+    "dev": "npm run _server --  --config lib/conf.dev.js",
+    "dist": "npm run _server --  --config lib/conf.prod.js",
+    "start": "npm run dev",
+    "test": "echo \"Error: no test specified\""
+  }
+}
